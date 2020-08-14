@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+</head>
+<script src="vue-2.4.0.js"></script>
+<body>
+<div id="box">
+    <input type="button" value="按钮1" @click="start">
+    <input type="button" value="按钮2" @click="end">
+    <h4>{{ msg }}</h4>
+</div>
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+            msg: "success bbq",
+            intervalId:null
+        },
+        methods:{
+        	start(){
+        	    if(this.intervalId!=null) return;
+                this.intervalId = setInterval(()=>{
+                    var st = this.msg.substring(0, 1);
+                    var end = this.msg.substring(1);
+                    this.msg = end + st;
+                }, 300);
+        	},
+            end:function (){
+                clearInterval(this.intervalId);
+                this.intervalId = null;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
