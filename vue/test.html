@@ -9,12 +9,22 @@
 <body>
     <div id="box">
         <div v-for="aa in 10">{{aa}}</div>
+        <input type="button" @click="iter()">
     </div>
+    
     <script>
         var vm = new Vue({
             el:"#box",
-            data:{},
-            methods:{}
+            data:{
+                list:[11,22,33]
+            },
+            methods:{
+                iter(){
+                    this.list.some((item,i)=>{
+                        console.log("item" + item + ";===i" + i);
+                    })
+                }
+            }
         });
     </script>
     
