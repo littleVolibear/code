@@ -1,15 +1,15 @@
-package com.liuyt.pro.sys.controller;
-
+package com.liuyt.pro.sys;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class ProSysWebApplication {
+@ComponentScan({"com.liuyt"})
+public class SysStarterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProSysWebApplication.class, args);
+		SpringApplication.run(SysStarterApplication.class, args);
 	}
 
 }
